@@ -157,7 +157,7 @@ L.GeometryUtil = {
         // special case where points lie on the same vertical axis
         return new L.Point(ptA.x, ptA.y + (ptB.y - ptA.y) * ratio);
     }
-}
+};
 L.RotatedMarker = L.Marker.extend({
     options: {
         angle: 0
@@ -178,7 +178,8 @@ L.RotatedMarker = L.Marker.extend({
             this._icon.style.filter += ' progid:DXImageTransform.Microsoft.Matrix(sizingMethod=\'auto expand\', M11=' + costheta + ', M12=' + (-sintheta) + ', M21=' + sintheta + ', M22=' + costheta + ')';
         }
     }
-});﻿/**
+});
+/**
 * Defines several classes of symbol factories,
 * to be used with L.PolylineDecorator
 */

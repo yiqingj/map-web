@@ -9,8 +9,9 @@ $(document).ready(
     function () {
 
         var map = L.map('map',{zoomControl: false}).setView([37.386966, -122.005186], 13);
-
         L.control.scale().addTo(map);
+        L.control.zoom({position: 'topright'}).addTo(map);
+
 // create a CloudMade tile layer
         var cloudmadeUrl = 'http://{s}.tile.cloudmade.com/BC9A493B41014CAABB98F0471D759707/997/256/{z}/{x}/{y}.png',
             cloudmadeAttribution = 'Map data &copy; 2011 OpenStreetMap contributors, Imagery &copy; 2011 CloudMade';
@@ -20,21 +21,25 @@ $(document).ready(
             attribution: cloudmadeAttribution
         });
 
-// create a CloudMade tile layer
+        var osm = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+        });
+
+// create a Google tile layer
         var googleUrl = 'http://mt0.google.com/vt/v=w2.106&h1=en-US&x={x}&s=&y={y}&z={z}&s=Galile',
             googleAttribution = 'Map data &copy; 2012 Google';
 
         var google = new L.TileLayer(googleUrl, {
             maxZoom: 18,
             attribution: googleAttribution
-        });
+        }).addTo(map);
 
-        map.addLayer(google);// default map layer
         var routeLayer = new L.LayerGroup();
 
         map.addLayer(routeLayer);
 
         var baseMaps = {
+            "OSM": osm,
             "CloudMate": cloudmade,
             "google": google
         };

@@ -8,13 +8,6 @@
     width: 100%;
 }
 
-#search-box{
+#route-control-input{
     width: 40em;
-    height: 2em;
-}
-#search-button{
-    width: 5em;
-    height: 2.5em;
-    border: none;
-    background-color: #0055ff;
 }

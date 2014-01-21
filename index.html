@@ -4,12 +4,45 @@
     <title>Maps UI</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/leaflet.css">
-    <script src="js/vendor/jquery-2.0.1.js"></script>
+    <link rel="stylesheet" href="css/theme/sunny/jquery-ui-1.10.4.custom.css">
+
+    <script src="js/vendor/jquery-2.0.3.js"></script>
+    <script src="js/vendor/jquery-ui-1.10.4.custom.js"></script>
     <script src="js/vendor/leaflet/leaflet-src.js"></script>
+    <script src="js/vendor/leaflet/Polyline.encoded.js"></script>
+    <script src="js/vendor/leaflet/leaflet.polylineDecorator.js"></script>
     <script src="js/Control.Route.js"></script>
     <script src="js/main.js"></script>
 </head>
 <body>
 <div id="map"></div>
+<div id="route-control" class="ui-widget" hidden="true">
+
+    <input id='route-control-input' type='text' name='search-box' value='37.38687,-122.00581 37.38052,-122.04577'/>
+    <button id='route-control-button'>Search</button>
+    <form id="route-control-style-form">
+        <div id="route-control-style">
+            <input type="radio" id="radio1" name="radio" value="fastest" checked="checked"><label
+                for="radio1">Fastest</label>
+            <input type="radio" id="radio2" name="radio" value="shortest"><label for="radio2">Shortest</label>
+        </div>
+    </form>
+    <ul id="route-control-list"/>
+</div>
+<ul id="menu" hidden="true">
+    <li><a href="#"><span class="ui-icon ui-icon-disk"></span>Save</a></li>
+    <li><a href="#"><span class="ui-icon ui-icon-zoomin"></span>Zoom In</a></li>
+    <li><a href="#"><span class="ui-icon ui-icon-zoomout"></span>Zoom Out</a></li>
+    <li class="ui-state-disabled"><a href="#"><span class="ui-icon ui-icon-print"></span>Print...</a></li>
+    <li>
+        <a href="#">Playback</a>
+        <ul>
+            <li><a href="#"><span class="ui-icon ui-icon-seek-start"></span>Prev</a></li>
+            <li><a href="#"><span class="ui-icon ui-icon-stop"></span>Stop</a></li>
+            <li><a href="#"><span class="ui-icon ui-icon-play"></span>Play</a></li>
+            <li><a href="#"><span class="ui-icon ui-icon-seek-end"></span>Next</a></li>
+        </ul>
+    </li>
+</ul>
 </body>
 </html>
